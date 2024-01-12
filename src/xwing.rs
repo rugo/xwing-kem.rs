@@ -113,9 +113,16 @@ pub fn decapsulate(ct: [u8; XWING_CT_BYTES], sk: [u8; XWING_SK_BYTES]) -> [u8; 3
 }
 
 
+#[derive(PartialEq, Eq, Debug)]
 pub struct XwingSecretKey([u8; XWING_SK_BYTES]);
+
+#[derive(PartialEq, Eq, Debug)]
 pub struct XwingPublicKey([u8; XWING_PK_BYTES]);
+
+#[derive(PartialEq, Eq, Debug)]
 pub struct XwingSharedSecret([u8; XWING_SS_BYTES]);
+
+#[derive(PartialEq, Eq, Debug)]
 pub struct XwingCiphertext([u8; XWING_CT_BYTES]);
 
 pub struct XwingKeyPair {

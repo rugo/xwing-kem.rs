@@ -14,9 +14,8 @@ fn main() {
 
     println!("Decapsulating ciphertext with the secret key to get shared secret!");
     let ss_result = keypair.sk.decapsulate(ct);
-    let ss_val = ss_result.to_bytes();
 
-    assert_eq!(&ss.to_bytes(), &ss_val);
+    assert_eq!(ss, ss_result);
 
-    println!("Shared secret is: {:x?}", ss_val)
+    println!("Shared secret is: {:x?}", ss_result)
 }
