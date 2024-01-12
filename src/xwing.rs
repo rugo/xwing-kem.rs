@@ -113,7 +113,7 @@ pub fn decapsulate(ct: [u8; XWING_CT_BYTES], sk: [u8; XWING_SK_BYTES]) -> [u8; 3
 }
 
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq)]
 pub struct XwingSecretKey([u8; XWING_SK_BYTES]);
 
 #[derive(PartialEq, Eq, Clone, Copy, Debug)]
