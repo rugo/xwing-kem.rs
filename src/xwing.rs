@@ -116,13 +116,13 @@ pub fn decapsulate(ct: [u8; XWING_CT_BYTES], sk: [u8; XWING_SK_BYTES]) -> [u8; 3
 #[derive(PartialEq, Eq, Debug)]
 pub struct XwingSecretKey([u8; XWING_SK_BYTES]);
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Clone, Copy, Debug)]
 pub struct XwingPublicKey([u8; XWING_PK_BYTES]);
 
 #[derive(PartialEq, Eq, Debug)]
 pub struct XwingSharedSecret([u8; XWING_SS_BYTES]);
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Clone, Copy, Debug)]
 pub struct XwingCiphertext([u8; XWING_CT_BYTES]);
 
 pub struct XwingKeyPair {
@@ -131,13 +131,13 @@ pub struct XwingKeyPair {
 }
 
 impl XwingSecretKey {
-    pub fn decapsulate(self, ct: XwingCiphertext) -> XwingSharedSecret {
+    pub fn decapsulate(&self, ct: XwingCiphertext) -> XwingSharedSecret {
         XwingSharedSecret(decapsulate(ct.0, self.0))
     }
 }
 
 impl XwingPublicKey {
-    pub fn encapsulate(self) -> (XwingSharedSecret, XwingCiphertext) {
+    pub fn encapsulate(&self) -> (XwingSharedSecret, XwingCiphertext) {
         let (ss, ct) = encapsulate(self.0);
         (XwingSharedSecret(ss), XwingCiphertext(ct))
     }
@@ -152,13 +152,13 @@ impl XwingPublicKey {
 }
 
 impl XwingSharedSecret {
-    pub fn to_bytes(self) -> [u8; XWING_SS_BYTES] {
+    pub fn to_bytes(&self) -> [u8; XWING_SS_BYTES] {
         self.0
     }
 }
 
 impl XwingCiphertext {
-    pub fn to_bytes(self) -> [u8; XWING_CT_BYTES] {
+    pub fn to_bytes(&self) -> [u8; XWING_CT_BYTES] {
         self.0
     }
 
