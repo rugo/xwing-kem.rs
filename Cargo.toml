@@ -8,7 +8,7 @@ description = "Xwing hybrid combiner KEM utilizing MLKEM/Kyber and X25519. See h
 homepage = "https://github.com/rugo/xwing-kem.rs"
 documentation = "https://github.com/rugo/xwing-kem.rs"
 repository = "https://github.com/rugo/xwing-kem.rs"
-keywords = ["cryptography", "kyber", "post-quantum", "hybrid", "curve25519", "KEM"]
+keywords = ["cryptography", "kyber", "post-quantum", "hybrid", "curve25519"]
 categories = ["cryptography", "post-quantum"]
 authors = [
     "Ruben Gonzalez <mail@ruben-gonzalez.de>",
