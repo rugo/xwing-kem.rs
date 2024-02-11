@@ -2,8 +2,17 @@
 name = "xwing-kem"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+readme = "README.md"
+license = "BSD-3-Clause"
+description = "Xwing hybrid combiner KEM utilizing MLKEM/Kyber and X25519. See https://eprint.iacr.org/2024/039."
+homepage = "https://github.com/rugo/xwing-kem.rs"
+documentation = "https://github.com/rugo/xwing-kem.rs"
+repository = "https://github.com/rugo/xwing-kem.rs"
+keywords = ["cryptography", "kyber", "post-quantum", "hybrid", "curve25519", "KEM"]
+categories = ["cryptography", "post-quantum"]
+authors = [
+    "Ruben Gonzalez <mail@ruben-gonzalez.de>",
+]
 
 [dependencies]
 pqcrypto-kyber = "0.8.0"
