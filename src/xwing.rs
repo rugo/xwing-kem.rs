@@ -134,6 +134,10 @@ impl XwingSecretKey {
     pub fn decapsulate(&self, ct: XwingCiphertext) -> XwingSharedSecret {
         XwingSharedSecret(decapsulate(ct.0, self.0))
     }
+
+    pub fn from(bytes: [u8; XWING_SK_BYTES]) -> XwingSecretKey {
+        XwingSecretKey(bytes)
+    }
 }
 
 impl XwingPublicKey {
